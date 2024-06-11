@@ -9,14 +9,22 @@ export const siteConfig = {
     //   title: "Home",
     //   href: "/",
     // },
+    // {
+    //   title: "Categorías",
+    //   href: "/categories",
+    // },
     {
-      title: "Categorías",
-      href: "/categories",
+      title: "Presentadores",
+      href: "/presenters",
     },
     {
-      title: "Productos",
-      href: "/products",
+      title: "Proyectos",
+      href: "/projects",
     },
+    // {
+    //   title: "Productos",
+    //   href: "/products",
+    // },
   ],
   links: {
     twitter: "https://twitter.com/shadcn",
