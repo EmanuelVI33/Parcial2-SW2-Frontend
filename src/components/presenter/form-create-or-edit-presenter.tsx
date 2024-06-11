@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useContext, useRef, useState } from "react";
+import { useContext } from "react";
 import { Sex } from "@/interfaces/presenter";
 import { RadioGroup, RadioGroupItem } from "@radix-ui/react-radio-group";
 import { useMutationPresenter } from "@/hooks/presenter/use-mutation-presenter";
 import { CustomDialogContext } from "../ui/custom-dialog";
-import { fileToBase64 } from "@/lib/file";
+import { useFileUpload } from "@/hooks/use-file-upload";
 
 const formSchema = z.object({
   fullName: z.string().min(3),
@@ -20,28 +20,7 @@ const formSchema = z.object({
 export function FormCreateOrEditPresenter() {
     const { createPresenter, isLoading } = useMutationPresenter();
     const { handleTogle } = useContext(CustomDialogContext);
-    const photoRef = useRef<HTMLInputElement>(null);
-    const [base64, setBase64] = useState('');
-    const [fileExtension, setFileExtension] = useState('');
-
-    const handleFileChange = async () => {
-      if (!photoRef.current) return;
-
-      const file = photoRef.current.files?.[0];
-      if (!file) return;
-
-      try {
-          const base64String = await fileToBase64(file);
-          setBase64(base64String);
-
-          const extension = file.name.split('.').pop();
-          if (extension) {
-              setFileExtension(extension);
-          }
-      } catch (error) {
-          console.error('Error converting file to base64:', error);
-      }
-    };
+    const { fileInputRef, base64, fileExtension, handleFileChange } = useFileUpload();
   
     const form = useForm<z.infer<typeof formSchema>>({
       resolver: zodResolver(formSchema),
@@ -135,7 +114,7 @@ export function FormCreateOrEditPresenter() {
                             type="file"   
                             placeholder="foto"
                             {...field} 
-                            ref={photoRef}
+                            ref={fileInputRef}
                             onChange={handleFileChange}
                         />
                     </>
