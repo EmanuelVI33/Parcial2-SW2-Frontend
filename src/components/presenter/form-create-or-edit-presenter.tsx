@@ -6,10 +6,10 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useContext } from "react";
 import { Sex } from "@/interfaces/presenter";
-import { RadioGroup, RadioGroupItem } from "@radix-ui/react-radio-group";
-import { useMutationPresenter } from "@/hooks/presenter/use-mutation-presenter";
+import { useCreatePresenter } from "@/hooks/presenter/use-create-presenter";
 import { CustomDialogContext } from "../ui/custom-dialog";
 import { useFileUpload } from "@/hooks/use-file-upload";
+import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 
 const formSchema = z.object({
   fullName: z.string().min(3),
@@ -18,7 +18,7 @@ const formSchema = z.object({
 });
 
 export function FormCreateOrEditPresenter() {
-    const { createPresenter, isLoading } = useMutationPresenter();
+    const { createPresenter, isLoading } = useCreatePresenter();
     const { handleTogle } = useContext(CustomDialogContext);
     const { fileInputRef, base64, fileExtension, handleFileChange } = useFileUpload();
   

@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Microservicios",
+  name: "Generador de contenido",
   description:
     "Beautifully designed components built with Radix UI and Tailwind CSS.",
   mainNav: [

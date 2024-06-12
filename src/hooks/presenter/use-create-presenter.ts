@@ -12,7 +12,7 @@ const CREATE_PRESENTER_MUTATION = gql`
   }
 `;
 
-export const useMutationPresenter = () => {
+export const useCreatePresenter = () => {
   const [createPresenter, { data, loading: isLoading, error }] = useMutation(CREATE_PRESENTER_MUTATION, {
     refetchQueries: [ { query: ALL_PRESENTER} ]
   });

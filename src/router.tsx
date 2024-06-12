@@ -4,6 +4,7 @@ import Layout from "@/Layout/Layout";
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
 import PresenterPage from "./pages/PresenterPage";
+import ProjectPage from "./pages/ProjectPage";
 
 export const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "projects",
-          element: <PresenterPage />
+          element: <ProjectPage />
         }
       ]
     },

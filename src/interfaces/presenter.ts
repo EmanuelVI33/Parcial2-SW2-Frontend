@@ -12,6 +12,6 @@ export interface Presenter {
 }
 
 export enum Sex {
-    MALE,
-    FEMALE
+    MALE = 'MALE',
+    FEMALE = 'FEMALE'
 }
