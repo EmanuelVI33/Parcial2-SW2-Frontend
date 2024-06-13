@@ -7,7 +7,6 @@ import { ApolloProvider } from "@apollo/client";
 import { apolloClient } from './constant/apollo-client.ts';
 
 const queryClient = new QueryClient();
- 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

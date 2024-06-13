@@ -8,7 +8,6 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { Button } from "../ui/button";
-import { base } from "@/constant/contant";
 import { useProject } from "@/hooks/project/use-project";
 import { useDeleteProject } from '../../hooks/project/use-delete-project';
 
@@ -46,11 +45,16 @@ function TableProject() {
                         <TableCell>{project.description}</TableCell>
                         <TableCell className="">
                             <div className="w-48 h-48 bg-white shadow-lg rounded-lg overflow-hidden">
-                                <img className="w-full h-full object-cover" src={`${base}/${project.coverUrl}`} alt={`Foto de ${project.id}}`} />
+                                <img className="w-full h-full object-cover" src={project.coverUrl} alt={`Foto de ${project.id}}`} />
                             </div>
                         </TableCell>
                         <TableCell>
-                            {project.presenter.fullName}
+                            <div className="flex flex-col justify-center items-center gap-2">
+                                <div className="w-24 h-24 bg-white shadow-lg rounded-lg overflow-hidden">
+                                    <img className="w-full h-full object-cover" src={project.presenter.fotoUrl} alt={`Foto de ${project.id}}`} />
+                                </div>
+                                <p>{project.presenter.fullName}</p>
+                            </div>
                         </TableCell>
                         <TableCell className="text-center flex justify-around">
                             <Button onClick={() => null}>

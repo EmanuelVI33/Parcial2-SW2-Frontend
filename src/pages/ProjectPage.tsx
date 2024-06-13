@@ -9,7 +9,7 @@ export default function ProjectPage() {
               <h1 className="scroll-m-20 text-2xl font-extrabold tracking-tight lg:text-3xl">
                   Proyectos
               </h1>
-              <CreateOrEdit>
+              <CreateOrEdit title="Creando Projecto" titleButton="crear proyecto">
                 <FormProject />
               </CreateOrEdit>
           </div>

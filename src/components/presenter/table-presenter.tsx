@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/table"
 import { Button } from "../ui/button";
 import { usePresenter } from "@/hooks/presenter/use-presenter";
-import { base } from "@/constant/contant";
 import { useDeletePresenter } from "@/hooks/presenter/use-delete-presenter";
 
 function TablePresenter() {
@@ -45,7 +44,7 @@ function TablePresenter() {
                         <TableCell>{presenter.sex}</TableCell>
                         <TableCell className="">
                             <div className="w-48 h-48 bg-white shadow-lg rounded-lg overflow-hidden">
-                                <img className="w-full h-full object-cover" src={`${base}/${presenter.fotoUrl}`} alt={`Foto de ${presenter.fullName}}`} />
+                                <img className="w-full h-full object-cover" src={presenter.fotoUrl} alt={`Foto de ${presenter.fullName}}`} />
                             </div>
                         </TableCell>
                         <TableCell className="text-center flex justify-around">

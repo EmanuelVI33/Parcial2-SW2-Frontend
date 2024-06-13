@@ -1,6 +1,7 @@
 import { gql, useMutation } from "@apollo/client";
 import { useEffect } from "react";
 import { toast } from "sonner";
+import { ALL_PROJECT } from "./use-project";
 
 // Definir la operación de mutación correctamente
 const CREATE_PROJECT_MUTATION = gql`
@@ -13,7 +14,7 @@ const CREATE_PROJECT_MUTATION = gql`
 
 export const useCreateProject = () => {
   const [createProject, { data, loading: isLoading, error }] = useMutation(CREATE_PROJECT_MUTATION, {
-    // refetchQueries: [ { query: ALL_PRESENTER} ]
+    refetchQueries: [ { query: ALL_PROJECT} ]
   });
 
   useEffect(() => {

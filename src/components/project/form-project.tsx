@@ -9,7 +9,6 @@ import { CustomDialogContext } from "../ui/custom-dialog";
 import { useFileUpload } from "@/hooks/use-file-upload";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { usePresenter } from "@/hooks/presenter/use-presenter";
-import { base } from "@/constant/contant";
 import { useCreateProject } from "@/hooks/project/use-create-project";
 
 const formSchema = z.object({
@@ -129,7 +128,7 @@ function FormProject() {
                                         <FormLabel className="font-normal">
                                             <div className="">
                                                 <p className="text-md mb-1">{presenter.fullName}</p>
-                                                <img className="h-20 w-20 object-cover" src={`${base}/${presenter.fotoUrl}`} alt={presenter.fullName} />
+                                                <img className="h-20 w-20 object-cover" src={presenter.fotoUrl} alt={presenter.fullName} />
                                             </div>
                                         </FormLabel>
                                     </FormItem>

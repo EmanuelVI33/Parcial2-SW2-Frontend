@@ -1,9 +1,15 @@
 import { ReactElement } from "react"
 import { CustomDialog } from "../ui/custom-dialog"
 
-export default function CreateOrEdit({children} : {children: ReactElement}) {
+interface Props {
+    children: ReactElement;
+    title: string;
+    titleButton: string;
+}   
+
+export default function CreateOrEdit({title = "Creando", titleButton = "crear", children} : Props) {
     return (
-        <CustomDialog title="Creando Presentador" titleButton="Crear Presentador">
+        <CustomDialog title={title} titleButton={titleButton}>
             {children}
         </CustomDialog>
     )

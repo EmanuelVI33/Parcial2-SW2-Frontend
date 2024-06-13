@@ -1,6 +1,6 @@
 import { Presenter } from "@/interfaces/presenter";
 import { gql, useQuery } from "@apollo/client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const ALL_PRESENTER = gql`
   {

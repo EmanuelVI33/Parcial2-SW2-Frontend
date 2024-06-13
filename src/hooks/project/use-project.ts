@@ -7,9 +7,10 @@ export const ALL_PROJECT = gql`
     projects: findAllProject {
         id,
         name,
+        coverUrl,
         presenter {
-        fullName,
-        fotoUrl
+          fullName,
+          fotoUrl
         }
     } 
 }`;
