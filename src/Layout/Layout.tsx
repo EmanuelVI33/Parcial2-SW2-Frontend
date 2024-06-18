@@ -13,6 +13,7 @@ export default function RootLayout() {
           <div className="flex-1">
             <Outlet />
           </div>
+          <></>
         </div>
         <Toaster richColors />
         <TailwindIndicator />
