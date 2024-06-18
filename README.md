@@ -1,2 +1,11 @@
-# react-shadcn-ui-template
-A React equivalent template  of shadcn-ui next js template
+# Instalar dependencias
+
+```
+npm i
+```
+
+# Ejecutar app
+
+```
+npm run dev
+```
